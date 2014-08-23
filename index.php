@@ -68,43 +68,45 @@
         <!-- Libraries -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script src="https://jquery-csv.googlecode.com/files/jquery.csv-0.71.js"></script>
         
         <script type="text/javascript">
-
-            // Load the Visualization API and the piechart package.
+            
             google.load('visualization', '1.0', {'packages':['corechart']});
-
-            // Set a callback to run when the Google Visualization API is loaded.
             google.setOnLoadCallback(drawChart);
 
             function drawChart() {
                 
-                var days = <?php echo count($data); ?>;
+                $.get("core/data.csv", function(csvString) {
+                    
+                    var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
+                    
+                    var data = new google.visualization.arrayToDataTable(arrayData);
+                    
+                    // this view can select a subset of the data at a time
+                    var view = new google.visualization.DataView(data);
+                    view.setColumns([0,1]);
 
-                // Create the data table.
-                var data = google.visualization.arrayToDataTable([
-                    ['Date', 'New', 'Incomplete', 'Confirmed', 'Triaged','In Progress', 'Fix Commited', 'Fix Released'],    
-                ]);           
-                
-                var options = {
-                    legend: { position: 'top', maxLines: 3 },
-                    bar: { groupWidth: '90%' },
-                    height: 400,
-                    isStacked: true,
-                    colors: ['#993300', '#b50000', '#FF0000', '#FF6600', '#a2d93c', '#0099C6', '#3366CC'],
-                    chartArea: {
-                        'width': '80%',
-                        'height': '350px' }
-                };
+                    var options = {
+                        legend: { position: 'top', maxLines: 3 },
+                        bar: { groupWidth: '90%' },
+                        height: 400,
+                        isStacked: true,
+                        colors: ['#993300', '#b50000', '#FF0000', '#FF6600', '#a2d93c', '#0099C6', '#3366CC'],
+                        chartArea: {
+                            'width': '80%',
+                            'height': '350px' }
+                    };
 
-                var chart = new google.visualization.BarChart(document.getElementById('chart_div')); // ColumnChart / PieChart / BarChart ect...
-                chart.draw(data, options);
+                    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div')); // ColumnChart / PieChart / BarChart ect...
+                    chart.draw(data, options);
+                });
             }
-
-
-            jQuery(window).resize(function () {
+            
+            
+            /*jQuery(window).resize(function () {
                 drawChart();
-            });
+            });*/
         </script>
     </body>
     
