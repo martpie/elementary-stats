@@ -9,7 +9,7 @@ elementary os stats from Launchpad
 * Python >= 2.7.x
     * urllib
     * os
-    * time
+    * datetime
     * sys
     * shutil
 
