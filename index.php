@@ -38,8 +38,8 @@
        
         <!-- Header -->
         <header class="container-fluid">
-            <div class="col-sm-8 col-sm-offset-2">
-                <div class="row">
+            <div class="row">
+               <div class="col-sm-8 col-sm-offset-2"> 
                     <h1>
                         <img src="img/icons/elementary_logo.svg" alt="elementary_logo" id="elementary_logo">
                         elementary stats
@@ -53,7 +53,7 @@
 
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
+                    <div class="col-sm-8 col-sm-offset-2">
                         <h3 class="text-left">freya-beta2</h3>
                         <div id="chart_div"></div>
                         <hr class="delimiter" />
