@@ -3,9 +3,11 @@
 
 import urllib    # used for getting Launchpad page
 import os        # used for some files manipulations
-import time      # used for getting the date
+import datatime  # used for getting the date
 import sys       # used for shutting down the script
 import shutil    # used for backup
+
+from datetime import datetime
 
 
 
@@ -19,7 +21,7 @@ data_file        = 'data.csv'                                                # n
 data_backup_file = 'data_backup.csv'                                         # name of your backup file
 temp_file        = 'temp.del'                                                # name of temp file
 bugs_line        = 500                                                       # max line of url page source code where bugs count can be found
-date             = time.strftime("%d/%m/%y")                                 # the date
+date             = datetime.utcnow().strftime("%d/%m/%y")                    # the date (UTC)
 
 
 
