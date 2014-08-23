@@ -3,7 +3,7 @@ elementary-stats
 
 elementary os stats from Launchpad
 
-##### Configuration
+#### Configuration needed
 
 * PHP >= 5.x
 * Python >= 2.7.x
@@ -15,14 +15,20 @@ elementary os stats from Launchpad
 
 ===
 
-##### Credits
+#### Installation
 
-* official elementary team
-* elementary os french community for all their advices and comments
+Copy/paste sources on your server and let it roll !
 
 ===
 
-##### Libraries & Frameworks used
+#### Credits
+
+* [elementary team](http://elementaryos.org)
+* [elementary os french community](http://www.elementaryos-fr.org/) for all their advices and comments
+
+===
+
+#### Libraries & Frameworks used
 
 * [jQuery 1.11.0](https://jquery.com/)
 * [Google Charts API](https://developers.google.com/chart/)
