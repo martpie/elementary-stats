@@ -23,7 +23,7 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/style_main.css">
         
-        <link rel="icon" type="image/png" href="img/icons/favicon.png" />
+        <link rel="icon" type="image/png" href="img/favicon.png" />
         <!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->  
