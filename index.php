@@ -99,7 +99,8 @@
                         colors: ['#993300', '#b50000', '#FF0000', '#FF6600', '#a2d93c', '#0099C6', '#3366CC'],
                         chartArea: {
                             'width': '80%',
-                            'height': '350px' }
+                            'height': '90%' },
+                        height: 400
                     };
 
                     var chart = new google.visualization.ColumnChart(document.getElementById('chart_div')); // ColumnChart / PieChart / BarChart ect...
