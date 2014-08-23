@@ -108,9 +108,9 @@
             }
             
             
-            /*jQuery(window).resize(function () {
+            jQuery(window).resize(function () {
                 drawChart();
-            });*/
+            });
         </script>
     </body>
     
