@@ -19,8 +19,8 @@
         
         <link rel="profile" href="http://gmpg.org/xfn/11">
         
-        <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/style_normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/style_main.css">
         
         <link rel="icon" type="image/png" href="img/icons/favicon.png" />
@@ -53,14 +53,14 @@
 
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-8 col-md-offset-2 text-center">
+                    <div class="col-md-8 col-md-offset-2">
                         <h3 class="text-left">freya-beta2</h3>
                         <div id="chart_div"></div>
                         <hr class="delimiter" />
                     </div>
                 </div>
                 <div class="row" id="description">
-                    <div class="col-md-8 col-md-offset-2">
+                    <div class="col-md-8 col-md-offset-2 text-center">
                         <a href="https://github.com/KeitIG/elementary-stats" target="_blank">sources</a>
                     </div>
                 </div>
