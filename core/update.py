@@ -32,6 +32,7 @@ date             = time.strftime("%d/%m/%y")                                 # t
 # Check if today's datas are here, if true -> let's end the script
 
 if date in open(data_file).read():
+    print('no update needed')
     sys.exit()
 
 
@@ -125,10 +126,10 @@ shutil.copy2(data_file, data_backup_file)
 
 # Print bugs in .csv file
 
-input = str(date) + ", " + str(b_new) + ', ' + str(b_incomp) + ', ' + str(b_conf) + ', ' + str(b_inprog) + ', ' + str(b_triaged) + ', ' + str(b_fix_committed) + ', ' + str(b_fix_released)
+input = str(date) + ", " + str(b_new) + ', ' + str(b_incomp) + ', ' + str(b_conf) + ', ' + str(b_triaged)  + ', ' + str(b_inprog) + ', ' + str(b_fix_committed) + ', ' + str(b_fix_released)
 
 with open(data_file, 'a') as file:
     file.write('\n' + input)
+    print (data_file + ' updated')
 
-
-# I guess it's the endthe 
+# I guess it's the end
