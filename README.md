@@ -25,6 +25,7 @@ Copy/paste sources on your server and let it roll !
 
 * [elementary team](http://elementaryos.org)
 * [elementary os french community](http://www.elementaryos-fr.org/) for all their advices and comments
+* dajool for isfreyareleasedyet sources
 
 ===
 
