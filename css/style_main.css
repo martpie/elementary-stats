@@ -1,0 +1,84 @@
+/* ------------------------------------
+ * ----- WHOLE PAGE -------------------
+ * ----------------------------------*/
+
+a, a:hover, a:active, a:focus{
+    color: inherit;
+    text-decoration: none;
+    outline: none;                             /* Fix for webkit browsers */
+    -webkit-tap-highlight-color: transparent;  /* Fix for Android devices */
+}
+
+hr { /* hr normalizer */
+    border : 0;
+    height : 1px;
+    background : 50% 0 no-repeat;
+    margin : 1em 0;
+}
+
+body{
+    font-family: 'Open Sans';
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: Raleway;
+    font-weight: 300;
+}
+
+/* ------------------------------------
+ * ----- MENUS / HEADER ---------------
+ * ----------------------------------*/
+
+    #elementary_logo{
+        display: inline-block;
+        vertical-align: sub;
+        width: 36px;
+        height: 36px;
+    }
+
+
+/* ------------------------------------
+ * ----- FOOTER -----------------------
+ * ----------------------------------*/
+
+
+
+
+
+/* ------------------------------------
+ * ----- BUTTONS -----------------------
+ * ----------------------------------*/
+
+
+
+
+/* ------------------------------------
+ * ----- FONTS ------------------------
+ * ----------------------------------*/
+
+
+
+/* ------------------------------------
+ * ----- OTHERS -----------------------
+ * ----------------------------------*/
+
+#description{
+    line-height: 2em;
+}
+
+#description a{
+    color: #44A2E9;
+    text-decoration: underline;
+    transition: all 100ms;
+}
+
+#description a:hover{
+    color: #2480bf;
+    text-decoration: none;
+}
+
+hr.delimiter{
+    background: #EEE;
+    width: 80%;
+    margin: 2em auto;
+}
