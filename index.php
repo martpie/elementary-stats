@@ -19,9 +19,9 @@
         
         <link rel="profile" href="http://gmpg.org/xfn/11">
         
+        <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/style_normalize.css">
         <link rel="stylesheet" type="text/css" href="css/style_main.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css">
         
         <link rel="icon" type="image/png" href="img/icons/favicon.png" />
         <!--[if lt IE 9]>
