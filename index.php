@@ -1,9 +1,8 @@
 <?php 
 
-    // update sript must have chmod +x myscript.py
-    $command = escapeshellcmd('python core/update.py');
-    $output = shell_exec($command);
-    echo $output;
+    // update script must have chmod +x myscript.py
+    $command = escapeshellcmd('python core/update.py 2>&1');
+    $output  = shell_exec($command);
 
 ?>
 
