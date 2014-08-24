@@ -3,7 +3,7 @@
 
 import urllib    # used for getting Launchpad page
 import os        # used for some files manipulations
-import datatime  # used for getting the date
+import datetime  # used for getting the date
 import sys       # used for shutting down the script
 import shutil    # used for backup
 
