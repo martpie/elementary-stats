@@ -1,8 +1,8 @@
 <?php 
 
-    // update script must have chmod +x myscript.py
-    $command = escapeshellcmd('python core/update.py 2>&1');
-    $output  = shell_exec($command);
+    // update sript must have correct permissions: chmod +x update.py
+    $command = escapeshellcmd('python update.py 2>&1');
+    $output  = exec($command);
 
 ?>
 
@@ -47,6 +47,7 @@
             </div>
         </header>
 
+       
         <!-- Main content -->
         <div id="wrap">
 
@@ -80,7 +81,7 @@
 
             function drawChart() {
                 
-                $.get("core/data.csv", function(csvString) {
+                $.get('data.csv', function(csvString) {
                     
                     var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
                     
@@ -108,7 +109,7 @@
             }
             
             
-            jQuery(window).resize(function () {
+            jQuery(window).resize(function () { // Resize charts in case of window resize
                 drawChart();
             });
         </script>
