@@ -1,6 +1,11 @@
 <?php 
 
-    error_reporting(E_ALL);
+    /* urgent things to do:
+     * 
+     *   1 - clean all this mess below
+     *   2 - define constants for options
+     *
+     */
 
     // update sript must have correct permissions: chmod +x update.py
     $command = escapeshellcmd('python update.py 2>&1');
@@ -9,9 +14,12 @@
    
     $data_csv = array_map('str_getcsv', file('data.csv'));
 
-    // get max(amount_og_bugs) count & date
+    // get max(amount_of_bugs) count & date
     $max_bugs = 0;
     $max_bugs_date = '';
+    $slope_arr = array();
+
+    $yesterday_bugs = 0;
 
     foreach($data_csv as $i=>$data){
         
@@ -21,7 +29,15 @@
             $max_bugs = $total_bugs;
             $max_bugs_date = $data[0]; // date
         }
+        
+        if($i >= 1 && is_int($total_bugs)){ // don't look for [-1]
+            array_push($slope_arr, $total_bugs - $yesterday_bugs);
+            $yesterday_bugs = $total_bugs;
+        }
     }
+
+    array_shift($slope_arr);                            // shifting first value
+    $slope = array_sum($slope_arr) / count($slope_arr); // getting slope
 
 ?>
 
