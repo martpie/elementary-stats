@@ -1,7 +1,7 @@
 elementary-stats
 ================
 
-elementary os stats from Launchpad. You can see a temp page [here](http://elementarybugs.org/elementary-stats/).
+elementary os stats from Launchpad. You can see a temp page [here](http://elementarybugs.org/).
 
 #### Ideas
 
