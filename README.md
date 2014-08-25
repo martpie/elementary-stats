@@ -1,7 +1,7 @@
 elementary-stats
 ================
 
-elementary os stats from Launchpad. You can see a temp page [here](http://elementarybugs.org
+elementary os stats from Launchpad. You can see a temp page [here](http://elementarybugs.org).
 
 * List amount of bugs every day and show them in a graph
 * A backup is done every day in ```data_backup.csv```
