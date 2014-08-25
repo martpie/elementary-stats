@@ -1,8 +1,27 @@
 <?php 
 
+    error_reporting(E_ALL);
+
     // update sript must have correct permissions: chmod +x update.py
     $command = escapeshellcmd('python update.py 2>&1');
     $output  = exec($command);
+
+   
+    $data_csv = array_map('str_getcsv', file('data.csv'));
+
+    // get max(amount_og_bugs) count & date
+    $max_bugs = 0;
+    $max_bugs_date = '';
+
+    foreach($data_csv as $i=>$data){
+        
+        $total_bugs = $data[1] + $data[2] + $data[3] + $data[4] + $data[5];
+        
+        if($total_bugs > $max_bugs){
+            $max_bugs = $total_bugs;
+            $max_bugs_date = $data[0]; // date
+        }
+    }
 
 ?>
 
@@ -67,7 +86,6 @@
             </div>
 
         </div>
-    
         
         <!-- Libraries -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -101,7 +119,7 @@
                             'width': '80%',
                             'height': '75%' },
                         hAxis: {
-                            showTextEvery: 3} 
+                            showTextEvery: 'automatic' } 
                     };
 
                     var chart = new google.visualization.ColumnChart(document.getElementById('chart_div')); // ColumnChart / PieChart / BarChart ect...
