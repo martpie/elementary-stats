@@ -1,7 +1,12 @@
 elementary-stats
 ================
 
-elementary os stats from Launchpad. You can see a temp page [here](http://elementarybugs.org/).
+elementary os stats from Launchpad. You can see a temp page [here](http://elementarybugs.org
+
+* List amount of bugs every day and show them in a graph
+* A backup is done every day in ```data_backup.csv```
+
+===
 
 #### Ideas
 
@@ -9,6 +14,8 @@ elementary os stats from Launchpad. You can see a temp page [here](http://elemen
 * Remove limitations (see below)
 * Add more graphes: blueprints ?
 * Add total bounties
+
+===
 
 #### Requirements
 
