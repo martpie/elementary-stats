@@ -1,9 +1,16 @@
 elementary-stats
 ================
 
-elementary os stats from Launchpad
+elementary os stats from Launchpad. You can see a temp page [here](http://elementarybugs.org/elementary-stats/).
 
-#### Configuration needed
+#### Ideas
+
+* Seriously, do all the job in PHP, and let Python away
+* Remove limitations (see below)
+* Add more graphes: blueprints ?
+* Add total bounties
+
+#### Requirements
 
 * PHP >= 5.x
 * Python >= 2.7.x
@@ -21,11 +28,17 @@ Copy/paste sources on your server and let it roll !
 
 ===
 
+#### Limitations
+
+Update is done only when the first user of the day display the page
+
+===
+
 #### Credits
 
 * [elementary team](http://elementaryos.org)
 * [elementary os french community](http://www.elementaryos-fr.org/) for all their advices and comments
-* dajool for isfreyareleasedyet sources
+* dajool for [isfreyareleasedyet sources](https://bitbucket.org/brejoc/isisisreleasedyet.com)
 
 ===
 
