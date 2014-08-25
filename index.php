@@ -101,8 +101,7 @@
                             'width': '80%',
                             'height': '75%' },
                         hAxis: {
-                            slantedText:true,
-                            slantedTextAngle: 90 } 
+                            showTextEvery: 3} 
                     };
 
                     var chart = new google.visualization.ColumnChart(document.getElementById('chart_div')); // ColumnChart / PieChart / BarChart ect...
