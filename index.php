@@ -7,11 +7,15 @@
      *
      */
 
-    // update sript must have correct permissions: chmod +x update.py
-    $command = escapeshellcmd('python update.py 2>&1');
-    $output  = exec($command);
+    define('ENABLE_ELEMENTARY_STATS', true);
 
-   
+    // update sript must have correct permissions: chmod +x update.py
+    if(ENABLE_ELEMENTARY_STATS){
+        $command = escapeshellcmd('python update.py 2>&1');
+        $output  = exec($command);
+    }
+
+
     $data_csv = array_map('str_getcsv', file('data.csv'));
 
     // get max(amount_of_bugs) count & date
