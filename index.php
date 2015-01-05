@@ -53,7 +53,6 @@
 
         <!-- Main content -->
         <div id="wrap">
-
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2">
@@ -68,53 +67,15 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
-        <!-- Libraries -->
+        <!-- JS libraries -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="https://www.google.com/jsapi"></script>
         <script src="https://jquery-csv.googlecode.com/files/jquery.csv-0.71.js"></script>
 
-        <script type="text/javascript">
+        <!-- JS stuff -->
+        <script src="js/chart.js"></script>
 
-            google.load('visualization', '1.0', {'packages':['corechart']});
-            google.setOnLoadCallback(drawChart);
-
-            function drawChart() {
-
-                $.get('data.csv', function(csvString) {
-
-                    var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
-
-                    var data = new google.visualization.arrayToDataTable(arrayData);
-
-                    // this view can select a subset of the data at a time
-                    var view = new google.visualization.DataView(data);
-                    view.setColumns([0,1]);
-
-                    var options = {
-                        legend: { position: 'top', maxLines: 3 },
-                        bar: { groupWidth: '90%' },
-                        height: 550,
-                        isStacked: true,
-                        colors: ['#993300', '#b50000', '#FF0000', '#FF6600', '#a2d93c', '#0099C6', '#3366CC'],
-                        chartArea: {
-                            'width': '80%',
-                            'height': '75%' },
-                        hAxis: {
-                            showTextEvery: 'automatic' }
-                    };
-
-                    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div')); // ColumnChart / PieChart / BarChart ect...
-                    chart.draw(data, options);
-                });
-            }
-
-
-            jQuery(window).resize(function () { // Resize charts in case of window resize
-                drawChart();
-            });
-        </script>
     </body>
 </html>
