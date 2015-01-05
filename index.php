@@ -22,11 +22,11 @@
 
         <link rel="profile" href="http://gmpg.org/xfn/11">
 
-        <link rel="stylesheet" type="text/css" href="css/style_normalize.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/style_main.css">
 
         <link rel="icon" type="image/png" href="img/favicon.png" />
+
         <!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
@@ -34,7 +34,6 @@
         <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
     </head>
-
 
 
     <body>
@@ -74,7 +73,7 @@
 
         <!-- Libraries -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script src="https://www.google.com/jsapi"></script>
         <script src="https://jquery-csv.googlecode.com/files/jquery.csv-0.71.js"></script>
 
         <script type="text/javascript">
@@ -118,5 +117,4 @@
             });
         </script>
     </body>
-
 </html>
