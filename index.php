@@ -4,7 +4,7 @@
 
     // update sript must have correct permissions: chmod +x update.py
     if(ENABLE_ELEMENTARY_STATS){
-        $command = escapeshellcmd('python update.py 2>&1');
+        $command = escapeshellcmd('php update.php 2>&1');
         $output  = exec($command);
     }
 
