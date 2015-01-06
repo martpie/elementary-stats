@@ -1,8 +1,8 @@
 #!/usr/bin/php
 
 <?php
-error_reporting(-1);
-ini_set('display_errors', 'On');
+
+
     /*
     |--------------------------------------------------------------------------
     | Config
@@ -21,7 +21,6 @@ ini_set('display_errors', 'On');
 
     $url              = 'https://launchpad.net/elementary/+milestone/freya-rc1'; // URL of the Launchpad page you want
     $data_file        = 'data.csv';                                              // name of your data file
-    $data_backup_file = 'data_backup.csv';                                       // name of your backup data file
     $temp_file        = 'temp.del';                                              // name of temp file
     $bugs_line        =  300;                                                    // max line of url page source code where bugs
     $current_date     =  date('d/m/y');                                          // the date (UTC)
@@ -44,34 +43,56 @@ ini_set('display_errors', 'On');
     $context = stream_context_create(array('http' => array('header'=>'Connection: close\r\n'))); // Fix performance issue
     $reponse = file_get_contents($url, false, $context);
     $reponse = implode("\n", array_slice(explode("\n", $reponse), $bugs_line));                  // Shortern String for better performance
-    $reponse = trim(preg_replace('/\s+/', ' ', $reponse));                                       // remove \n
 
+    $array = explode("\n", $reponse);
 
-    // Initialize bug count - need refactoring
+    foreach($array as $i=>$line) {
 
-    /*$b_new         = substr($reponse, strpos($reponse, '<span class="statusNEW">') + strlen('<span class="statusNEW">') + 9, 1);
-    $b_incomp        = substr($reponse, strpos($reponse, '<span class="statusINCOMPLETE">') + strlen('<span class="statusINCOMLETE">') + 10, 1);
-    $b_conf          = substr($reponse, strpos($reponse, '<span class="statusCONFIRMED">') + strlen('<span class="statusCONFIRMED">') + 9, 1);
-    $b_inprog        = substr($reponse, strpos($reponse, '<span class="statusTRIAGED">') + strlen('<span class="statusTRIAGED">') + 9, 1);
-    $b_triaged       = substr($reponse, strpos($reponse, '<span class="statusINPROGRESS">') + strlen('<span class="statusINPROGRESS">') + 9, 1);
-    $b_fix_committed = substr($reponse, strpos($reponse, '<span class="statusFIXCOMITTED">') + strlen('<span class="statusFIXCOMITTED">') + 9, 1);
-    $b_fix_released  = substr($reponse, strpos($reponse, '<span class="statusFIXRELEASED">') + strlen('<span class="statusFIXRELEASED">') + 9, 1);
+        if(strpos($line,'class="statusNEW"') !== false && !isset($b_new))
+        {
 
-    echo($b_new.'<br />');
-    echo($b_incomp.'<br />');
-    echo($b_conf.'<br />');
-    echo($b_inprog.'<br />');
-    echo($b_triaged.'<br />');
-    echo($b_fix_committed.'<br />');
-    echo($b_fix_released.'<br />');*/
+            $b_new = str_replace([' ', '<strong>', '</strong>'], '', $array[$i + 1]);
+        }
+        else if(strpos($line,'class="statusINCOMPLETE"') !== false && !isset($b_incomp))
+        {
 
-    $b_new           = 1;
-    $b_incomp        = 2;
-    $b_conf          = 3;
-    $b_inprog        = 4;
-    $b_triaged       = 5;
-    $b_fix_committed = 6;
-    $b_fix_released  = 7;
+            $b_incomp = str_replace([' ', '<strong>', '</strong>'], '', $array[$i + 1]);
+        }
+        else if(strpos($line,'class="statusCONFIRMED"') !== false && !isset($b_conf))
+        {
+
+            $b_conf = str_replace([' ', '<strong>', '</strong>'], '', $array[$i + 1]);
+        }
+        else if(strpos($line,'class="statusTRIAGED"') !== false && !isset($b_triaged))
+        {
+
+            $b_triaged = str_replace([' ', '<strong>', '</strong>'], '', $array[$i + 1]);
+        }
+        else if(strpos($line,'class="statusINPROGRESS"') !== false && !isset($b_inprog))
+        {
+
+            $b_inprog = str_replace([' ', '<strong>', '</strong>'], '', $array[$i + 1]);
+        }
+        else if(strpos($line,'class="statusFIXCOMMITTED"') !== false && !isset($b_fix_committed))
+        {
+
+            $b_fix_committed = str_replace([' ', '<strong>', '</strong>'], '', $array[$i + 1]);
+        }
+        else if(strpos($line,'class="statusFIXRELEASED"') !== false && !isset($b_fix_released))
+        {
+
+            $b_fix_released = str_replace([' ', '<strong>', '</strong>'], '', $array[$i + 1]);
+        }
+    }
+
+    $b_new           = isset($b_new)           ? $b_new           : 0;
+    $b_incomp        = isset($b_incomp)        ? $b_incomp        : 0;
+    $b_conf          = isset($b_conf)          ? $b_conf          : 0;
+    $b_inprog        = isset($b_inprog)        ? $b_inprog        : 0;
+    $b_triaged       = isset($b_triaged)       ? $b_triaged       : 0;
+    $b_fix_committed = isset($b_fix_committed) ? $b_fix_committed : 0;
+    $b_fix_released  = isset($b_fix_released)  ? $b_fix_released  : 0;
+
 
 
     /*
@@ -81,13 +102,16 @@ ini_set('display_errors', 'On');
     */
 
 
-    copy($data_file, $data_backup_file);
-
     // Generate input
 
-    $input = "\n".$current_date.', '.$b_new.', '.$b_incomp.', '.$b_conf.', '.$b_triaged .', '.$b_inprog.', '.$b_fix_committed.', '.$b_fix_released;
+    $input = $current_date.', '.$b_new.', '.$b_incomp.', '.$b_conf.', '.$b_triaged .', '.$b_inprog.', '.$b_fix_committed.', '.$b_fix_released;
+
 
     // Write in data.csv
-    $current_data  = file_get_contents($data_file);
-    $current_date .= $input;
-    file_put_contents ($data_file, $current_data);
+
+    $file = fopen($data_file, 'a');
+    fwrite($file, $input."\n");
+    fclose($file);
+
+
+    // We're done
