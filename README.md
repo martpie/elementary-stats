@@ -9,7 +9,6 @@ elementary os stats from Launchpad. [http://elementarybugs.org](http://elementar
 
 #### Ideas
 
-* Remove limitations (see below)
 * Add more graphes: blueprints ?
 * Add total bounties
 
@@ -23,7 +22,8 @@ elementary os stats from Launchpad. [http://elementarybugs.org](http://elementar
 
 #### Installation
 
-Copy/paste sources on your server and let it roll !
+* Copy/paste sources on your server
+* Create a cron task `0 0 * * * php update.php`
 
 ===
 

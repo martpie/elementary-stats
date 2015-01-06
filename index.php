@@ -1,15 +1,3 @@
-<?php
-
-    define('ENABLE_ELEMENTARY_STATS', true);
-
-    if(ENABLE_ELEMENTARY_STATS)
-    {
-        $command = escapeshellcmd('php update.php 2>&1');
-        $output  = exec($command);
-    }
-
-?>
-
 <!DOCTYPE html>
 
 <html lang="en">
