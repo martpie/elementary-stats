@@ -1,3 +1,4 @@
+
 google.load('visualization', '1.0', {'packages':['corechart']});
 google.setOnLoadCallback(drawChart);
 
@@ -33,6 +34,8 @@ function drawChart() {
 
 
 // Redraw chart on window resize
+
 jQuery(window).resize(function () { // Resize charts in case of window resize
+
     drawChart();
 });

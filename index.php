@@ -2,8 +2,8 @@
 
     define('ENABLE_ELEMENTARY_STATS', true);
 
-    // update sript must have correct permissions: chmod +x update.py
-    if(ENABLE_ELEMENTARY_STATS){
+    if(ENABLE_ELEMENTARY_STATS)
+    {
         $command = escapeshellcmd('php update.php 2>&1');
         $output  = exec($command);
     }
@@ -18,7 +18,8 @@
         <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-        
+
+        <!-- Metas -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -29,7 +30,7 @@
         <!-- Stylesheets -->
         <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/style_main.css">
-        
+
         <!-- Fonts -->
         <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Raleway:300'>
         <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:700,300'>
