@@ -15,6 +15,10 @@
 <html lang="en">
 
     <head>
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -22,22 +26,19 @@
 
         <link rel="profile" href="http://gmpg.org/xfn/11">
 
+        <!-- Stylesheets -->
         <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/style_main.css">
+        
+        <!-- Fonts -->
+        <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Raleway:300'>
+        <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:700,300'>
 
         <link rel="icon" type="image/png" href="img/favicon.png" />
-
-        <!--[if lt IE 9]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-
-        <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
     </head>
 
 
     <body>
-
         <!-- Header -->
         <header class="container-fluid">
             <div class="row">
@@ -49,7 +50,6 @@
                 </div>
             </div>
         </header>
-
 
         <!-- Main content -->
         <div id="wrap">
@@ -76,6 +76,5 @@
 
         <!-- JS stuff -->
         <script src="js/chart.js"></script>
-
     </body>
 </html>
