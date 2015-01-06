@@ -27,11 +27,6 @@ elementary os stats from Launchpad. [http://elementarybugs.org](http://elementar
 
 ===
 
-#### Limitations
-
-Update is done only when the first user of the day display the page
-
-===
 
 #### Credits
 
