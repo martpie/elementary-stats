@@ -24,6 +24,7 @@
     $temp_file        = 'temp.del';                                              // name of temp file
     $bugs_line        =  300;                                                    // max line of url page source code where bugs
     $current_date     =  date('d/m/y');                                          // the date (UTC)
+    $path_prefix      = '';                                                      // path prefix, add / at the end
 
 
 
@@ -109,7 +110,7 @@
 
     // Write in data.csv
 
-    $file = fopen($data_file, 'a');
+    $file = fopen($path_prefix.$data_file, 'a');
     fwrite($file, $input."\n");
     fclose($file);
 
