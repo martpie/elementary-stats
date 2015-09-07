@@ -1,6 +1,8 @@
 elementary-stats
 ================
 
+**Project is over, domaine name was not renewed, thanks everyone for your support.**
+
 elementary os stats from Launchpad. [http://elementarybugs.org](http://elementarybugs.org).
 
 * List amount of bugs every day and show them in a graph
