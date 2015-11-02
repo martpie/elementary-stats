@@ -1,7 +1,7 @@
 elementary-stats
 ================
 
-**Project is over, domaine name was not renewed, thanks everyone for your support.**
+**Project is over, domain name was not renewed, thanks everyone for your support.**
 
 elementary os stats from Launchpad. [http://elementarybugs.org](http://elementarybugs.org).
 
